@@ -15,7 +15,11 @@ ENV GOSU_VERSION=1.17 \
     MYSQL_USER=ltt_dbadmin \
     TZ=Asia/Jakarta \
     MYSQL_DATA_DIR=/var/lib/mysql \
-    RESTART=always 
+    RESTART=always
+
+# Set the container to use a specific network.
+ENV NETWORK=ltt-inventory-network \
+    IP=192.168.1.10
 
 # Mount /var/lib/mysql to a persistent volume ensuring your data remains intact across container restarts.
 VOLUME ["/var/lib/mysql"]
